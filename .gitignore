@@ -1,0 +1,95 @@
+# 操作系统生成的文件
+
+# macOS
+.DS_Store
+.AppleDouble
+Icon?
+*.swp
+*.swo
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.nib/
+*.swp
+*.swo
+*.tmp
+
+# IDE 和编辑器配置文件
+
+# Visual Studio Code
+.vscode/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+.sublime-project
+.sublime-workspace
+
+# JetBrains IDE
+*.iml
+
+# 构建和编译生成的文件
+
+# Node.js
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Java
+*.class
+*.jar
+
+# C/C++
+*.o
+*.obj
+*.so
+*.dylib
+
+# Ruby
+*.gem/
+vendor/bundle/
+
+# .NET
+*.dll
+*.exe
+*.pdb
+
+# 其他构建和生成的文件
+dist/
+build/
+*.log
+*.tmp
+*.bak
+
+# 依赖管理
+
+# Python 虚拟环境
+venv/
+env/
+
+# Ruby Gems
+.gem/
+
+# Composer
+vendor/
+
+# 临时文件和备份文件
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# 配置文件
+*.env

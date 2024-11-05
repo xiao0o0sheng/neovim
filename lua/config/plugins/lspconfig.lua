@@ -166,7 +166,7 @@ M = {
 					},
 				}
 				lspconfig.sqlls.setup{}											--	williamboman/mason-lspconfig.nvim  自动安装	| 手动  npm i -g sql-language-server
-				lspconfig.tsserver.setup {}										--	williamboman/mason-lspconfig.nvim  自动安装	| 手动  npm install -g typescript typescript-language-server
+				lspconfig.ts_ls.setup {}										--	williamboman/mason-lspconfig.nvim  自动安装	| 手动  npm install -g typescript typescript-language-server
 				lspconfig.vimls.setup{}											--	williamboman/mason-lspconfig.nvim  自动安装	| 手动  npm install -g vim-language-server				
 			end
 			},

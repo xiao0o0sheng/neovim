@@ -1,95 +1,62 @@
-# 操作系统生成的文件
-
-# macOS
-.DS_Store
+# --- 操作系统生成的文件 ---
+# MacOS
+**/.DS_Store
 .AppleDouble
 Icon?
-*.swp
-*.swo
-
 # Windows
 Thumbs.db
 Desktop.ini
 $RECYCLE.BIN/
-
 # Linux
 *~
 .nib/
-*.swp
+
+# --- 编辑器/IDE 临时文件 ---
+.idea/              # JetBrains IDE（IntelliJ/PyCharm等）
+*.iml
+.vscode/            # VS Code 配置
+*.sublime-workspace # Sublime Text
+*.sublime-project
+*.swp               # Vim/Emacs 临时文件
 *.swo
+
+# --- 开发环境文件 ---
+# 通用
+*.log
 *.tmp
+*.bak
+dist/
+build/
+.env                # 环境变量（敏感信息）
 
-# IDE 和编辑器配置文件
-
-# Visual Studio Code
-.vscode/
-
-# IntelliJ IDEA
-.idea/
-*.iml
-*.iws
-*.ipr
-
-# Sublime Text
-.sublime-project
-.sublime-workspace
-
-# JetBrains IDE
-*.iml
-
-# 构建和编译生成的文件
-
+# --- 语言/框架相关 ---
 # Node.js
 node_modules/
-
 # Python
 __pycache__/
 *.pyc
 *.pyo
-
+venv/
+env/
 # Java
 *.class
 *.jar
-
 # C/C++
 *.o
 *.obj
 *.so
 *.dylib
-
 # Ruby
 *.gem/
 vendor/bundle/
-
+.gem/
 # .NET
 *.dll
 *.exe
 *.pdb
-
-# 其他构建和生成的文件
-dist/
-build/
-*.log
-*.tmp
-*.bak
-
-# 依赖管理
-
-# Python 虚拟环境
-venv/
-env/
-
-# Ruby Gems
-.gem/
-
-# Composer
+# Composer (PHP)
 vendor/
 
-# 临时文件和备份文件
-*.swp
-*.swo
-*.tmp
-*.bak
-
-# 配置文件
-*.env
+# --- 其他 ---
+# Obsidian/Markdown 附件
+**/attachments/

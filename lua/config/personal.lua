@@ -11,24 +11,26 @@
 --                        /____/                                     
 
 -- Author: @xiao0o0sheng
--- LastModify: 2024/06/09
+-- LastModify: 2025/07/09
 
 
 
-vim.g.snips_author = "xiao0o0sheng"										-- 设置 snippets 的作者信息
-vim.g.python3_host_prog = "/usr/bin/python3"							-- 设置 Vim 调用的python解释器路径
--- vim.g.mkdp_browser = "chromium"										-- 设置 mkdp 插件使用的浏览器为 Chromium
--- vim.g.mkdp_browserfunc = "open"										-- Linux: xdg-open, MacOS: open, Windows: start
+vim.g.snips_author = "xiao0o0sheng"									-- 设置 snippets 的作者信息
+vim.g.python3_host_prog = "/usr/bin/python3"						   -- 设置 Vim 调用的python解释器路径
+vim.g.mkdp_browser = "chromium"										-- 设置 mkdp 插件使用的浏览器为 Chromium
+vim.g.mkdp_browserfunc = "open"										-- Linux: xdg-open, MacOS: open, Windows: start
 
 
 -- Dracula Pro color scheme(需要dracula_pro 文件)
 -- mkdir -p ~/.local/share/nvim/site/pack/themes/start
 -- cp -r dracula_pro ~/.local/share/nvim/site/pack/themes/start/dracula_pro
-vim.cmd("set packpath+=~/.local/share/nvim/site")						-- 确保 packpath 指向正确的路径
-vim.cmd("packadd! dracula_pro")											-- 加载 dracula_pro
-vim.cmd("syntax enable")												-- 启用语法高亮
-vim.g.dracula_colorterm = 0												-- 终端禁用 dracula_pro 方案
-vim.cmd("colorscheme dracula_pro_blade")								-- 默认使用 dracula_pro_blade 主题配色
+vim.cmd("set packpath+=~/.local/share/nvim/site")					-- 确保 packpath 指向正确的路径
+vim.cmd("packadd! dracula_pro")										-- 加载 dracula_pro
+vim.cmd("syntax enable")											-- 启用语法高亮
+vim.g.dracula_colorterm = 0											-- 终端禁用 dracula_pro 方案
+vim.cmd("colorscheme dracula_pro_blade")							-- 默认使用 dracula_pro_blade 主题配色
+
+
 -- vim.cmd("colorscheme deus")											-- 默认使用 deus 主题配色
 
 
@@ -48,7 +50,7 @@ function SetFileTitle()
         "@File:            " .. vim.fn.expand("%"),
         "@Software:        Neovim " .. version,
         "@Author:          xiao0o0sheng",
-        "@Email:           xiaosheng7@126.com",
+        "@Email:           *************@gmail.com",
         "@Version:         ",
         "@Description:     ",
         "-----------------------------------------------------------------",
@@ -83,7 +85,7 @@ function SetFileTitle()
         comment_symbol = '// '
         lines[2] = "TypeScript"
 	else
-		lines = {}														-- 若不是以上 脚本 文件，则不添加 title 信息
+		lines = {}													-- 若不是以上 脚本 文件，则不添加 title 信息
     end
 
     for i = 1, #lines - 4 do
@@ -91,10 +93,45 @@ function SetFileTitle()
     end
 
     vim.api.nvim_buf_set_lines(0, 0, 14, false, lines)
-    vim.cmd([[normal G]])												-- 光标置尾
+    vim.cmd([[normal G]])										-- 光标置尾
 end
 
 -- <<<<<<<<<< Title Setting  <<<<<<<<<<
+
+
+
+-- >>>>>>>>>> Tabs Converted >>>>>>>>>>
+local function smart_convert_tabs_to_spaces()
+  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  local tabstop = vim.bo.tabstop
+
+  for i, line in ipairs(lines) do
+    local new_line = ""
+    local col = 0  -- 当前列（显示宽度）
+
+    for j = 1, #line do
+      local char = line:sub(j, j)
+      if char == '\t' then
+        local spaces = tabstop - (col % tabstop)
+        new_line = new_line .. string.rep(' ', spaces)
+        col = col + spaces
+      else
+        new_line = new_line .. char
+        col = col + vim.fn.strdisplaywidth(char)  -- 处理多字节字符（如中文）
+      end
+    end
+
+    lines[i] = new_line
+  end
+
+  vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+  print("Tabs converted to spaces (aligned)")
+end
+
+-- 绑定快捷键
+vim.keymap.set('n', '<leader>pp', smart_convert_tabs_to_spaces, { noremap = true, silent = true })
+-- <<<<<<<<<< Tabs Converted  <<<<<<<<<<
+
 
 
 

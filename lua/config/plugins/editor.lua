@@ -250,6 +250,10 @@ return {
 			vim.api.nvim_set_keymap("n", "Z", ":UndotreeToggle<CR>", { noremap = true })						-- Z(大写)	打开/关闭	undotree窗口
 		end
 	},
+    {
+        "godlygeek/tabular",
+        event = "VeryLazy",  -- 按需加载
+    },
 	{
 		"numToStr/Comment.nvim",
 		config = function()

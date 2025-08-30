@@ -6,7 +6,7 @@
 --           /____/            /_/            
 
 -- Author: @xiao0o0sheng
--- LastModify: 2024/07/14
+-- LastModify: 2024/06/09
 
 
 local mode_nv = { "n", "v" }
@@ -16,7 +16,6 @@ local nmappings = {
 	{ from = "Q",             			to = ":q<CR>" },											-- Q			退出当前编辑文本
 	{ from = "E",             			to = ":q!<CR>" },											-- E			强制退出当前编辑文本
 	{ from = "W",             			to = ":wq<CR>" },											-- W			保存并退出当前编辑文本
-	{ from = "<c-a>",         			to = "ggVG",		mode = mode_nv },						-- <c-a>		全选整个文本
 	{ from = "re",             			to = ":r ! " },												-- re			执行bash命令并将输出写到vim编辑的文件中
 	{ from = "rn",             			to = ":saveas " },											-- rn			重命名当前文件(会自动保存)
 	{ from = "mh",             			to = ":verbose map " },										-- mh			后面跟快捷键位，查看快捷键位的引用

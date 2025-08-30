@@ -74,6 +74,27 @@ M =  {
 		lazy = false,
 		priority = 1000,
 	},
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"rafamadriz/neon",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"nyoom-engineering/oxocarbon.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"mhartington/oceanic-next",
+		lazy = false,
+		priority = 1000,
+	},
 }
 
 

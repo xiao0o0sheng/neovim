@@ -12,11 +12,11 @@ M = {
 					local tstabs = require('telescope-tabs')
 					tstabs.setup({
 					})
-					vim.keymap.set('n', '<c-t>', tstabs.list_tabs, {})												-- <c-t> 		打开 标签页 选择器
+					vim.keymap.set('n', '<c-t>', tstabs.list_tabs, {}) -- <c-t>        打开 标签页 选择器
 				end
 			},
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = 'make' },
-				--"nvim-telescope/telescope-ui-select.nvim",
+			--"nvim-telescope/telescope-ui-select.nvim",
 			{
 				"stevearc/dressing.nvim",
 				opts = {},
@@ -24,16 +24,17 @@ M = {
 		},
 		config = function()
 			local builtin = require('telescope.builtin')
-			vim.keymap.set('n', '<leader>ff', builtin.find_files, { noremap = true, nowait = true })				-- <leader>ff	文件	后续可以用 joshuto
-			vim.keymap.set('n', '<leader>fb', builtin.buffers, { noremap = true, nowait = true })					-- <leader>fb	缓冲区	
-			vim.keymap.set('n', '<leader>fh', builtin.help_tags, { noremap = true, nowait = true })					-- <leader>fh	帮助文档
-			vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { noremap = true, nowait = true })				-- <leader>fd	诊断信息
-			vim.keymap.set('n', '<leader>fz', builtin.colorscheme, { noremap = true, nowait = true })				-- <leader>fz	配色主题列表
-			vim.keymap.set('n', '<leader>fc', builtin.commands, { noremap = true, nowait = true })					-- <leader>fc	Vim 命令列表
-			vim.keymap.set('n', '<leader>fl', builtin.command_history, { noremap = true, nowait = true })			-- <leader>fl	Vim 历史命令列表
-			vim.keymap.set('n', '<leader>fs', builtin.search_history, { noremap = true, nowait = true })			-- <leader>fs	搜索历史
-			vim.keymap.set('n', '<leader>fk', builtin.keymaps, { noremap = true, nowait = true })					-- <leader>fk	快捷映射
-			
+			vim.keymap.set('n', '<leader>ff', builtin.find_files, { noremap = true, nowait = true }) -- <leader>ff   文件    后续可以用 joshuto
+			vim.keymap.set('n', '<leader>fb', builtin.buffers, { noremap = true, nowait = true }) -- <leader>fb   缓冲区
+			vim.keymap.set('n', '<leader>fh', builtin.help_tags, { noremap = true, nowait = true }) -- <leader>fh   帮助文档
+			vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { noremap = true, nowait = true }) -- <leader>fd   诊断信息
+			vim.keymap.set('n', '<leader>fz', builtin.colorscheme, { noremap = true, nowait = true }) -- <leader>fz   配色主题列表
+			vim.keymap.set('n', '<leader>fc', builtin.commands, { noremap = true, nowait = true }) -- <leader>fc   Vim 命令列表
+			vim.keymap.set('n', '<leader>fl', builtin.command_history, { noremap = true, nowait = true }) -- <leader>fl   Vim 历史命令列表
+			vim.keymap.set('n', '<leader>fs', builtin.search_history, { noremap = true, nowait = true }) -- <leader>fs   搜索历史
+			vim.keymap.set('n', '<leader>fk', builtin.keymaps, { noremap = true, nowait = true }) -- <leader>fk   快捷映射
+
+
 			local trouble = require("trouble.providers.telescope")
 			local ts = require('telescope')
 			local actions = require('telescope.actions')
@@ -52,9 +53,9 @@ M = {
 						"--trim",
 					},
 					layout_config = {
-						width = 0.85,																		-- 弹窗 占整个屏幕的比例
-						height = 0.85,																		-- 弹窗 占整个屏幕的比例
-						preview_width = 0.6,																-- 预览窗口 占整个弹窗的比例
+						width = 0.85, -- 弹窗 占整个屏幕的比例
+						height = 0.85, -- 弹窗 占整个屏幕的比例
+						preview_width = 0.6, -- 预览窗口 占整个弹窗的比例
 					},
 					mappings = {
 						i = {
@@ -66,17 +67,17 @@ M = {
 							["<esc>"] = "close",
 						}
 					},
-					color_devicons = true,																	-- 使用彩色的 Devicons 图标
-					prompt_prefix = "🔍 ",																	-- 搜索提示符前缀图标
-					selection_caret = " ",																	-- 当前选中条目前缀图标
+					color_devicons = true, -- 使用彩色的 Devicons 图标
+					prompt_prefix = "🔍 ", -- 搜索提示符前缀图标
+					selection_caret = " ", -- 当前选中条目前缀图标
 					path_display = { "truncate" },
 					file_previewer = require("telescope.previewers").vim_buffer_cat.new,
 					grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 				},
 				pickers = {
 					buffers = {
-						show_all_buffers = true,															-- 选择器中显示所有文件，包括隐藏
-						sort_lastused = true,																-- 最近使用的缓冲区靠前显示
+						show_all_buffers = true, -- 选择器中显示所有文件，包括隐藏
+						sort_lastused = true, -- 最近使用的缓冲区靠前显示
 						mappings = {
 							i = {
 								["<c-d>"] = actions.delete_buffer,
@@ -86,10 +87,10 @@ M = {
 				},
 				extensions = {
 					fzf = {
-						fuzzy = true,																		-- true 搜索时启用模糊匹配
-						override_generic_sorter = true,														-- true FZF 扩展将覆盖 Telescope 默认的排序器
-						override_file_sorter = true,														-- true FZF 扩展将覆盖 Telescope 默认的文件排序器
-						case_mode = "smart_case",															-- true 智能大小写，默认
+						fuzzy = true, -- true 搜索时启用模糊匹配
+						override_generic_sorter = true, -- true FZF 扩展将覆盖 Telescope 默认的排序器
+						override_file_sorter = true, -- true FZF 扩展将覆盖 Telescope 默认的文件排序器
+						case_mode = "smart_case", -- true 智能大小写，默认
 					},
 					command_palette = command_palette,
 				}
@@ -115,14 +116,14 @@ M = {
 		end
 	},
 	{
-		"FeiyouG/commander.nvim",		-- 快捷键位 描述插件，需要自己添加到 commander.add
+		"FeiyouG/commander.nvim", -- 快捷键位 描述插件，需要自己添加到 commander.add
 		dependencies = "nvim-telescope/telescope.nvim",
 		keys = {
-			{ "<c-q>",  "<CMD>Telescope commander<CR>", mode = "n" },												-- <c-q>	打开快捷键菜单
+			{ "<c-q>", "<CMD>Telescope commander<CR>", mode = "n" }, -- <c-q>    打开快捷键菜单
 		},
 		config = function()
 			local commander = require("commander")
-			--vim.keymap.set('n', '<c-q>', ":Telescope commander<CR>", { noremap = true, nowait = true } )			-- <c-q>	打开快捷键菜单
+			--vim.keymap.set('n', '<c-q>', ":Telescope commander<CR>", { noremap = true, nowait = true } )          -- <c-q>    打开快捷键菜单
 			commander.setup({
 				components = {
 					"DESC",
@@ -137,12 +138,12 @@ M = {
 					"CAT",
 				},
 				separator = " ",
-				auto_replace_desc_with_cmd = true,																	-- 如果 desc 为空或缺失，则 desc 组件将使用 cmd 填充
+				auto_replace_desc_with_cmd = true, -- 如果 desc 为空或缺失，则 desc 组件将使用 cmd 填充
 				prompt_title = "Commander",
 				integration = {
 					telescope = {
-						enable = true,																				-- Commander 启用 telescope UI 界面
-						theme = theme,																				-- Commander 启用 telescope UI 主题
+						enable = true, -- Commander 启用 telescope UI 界面
+						theme = theme, -- Commander 启用 telescope UI 主题
 					},
 					lazy = {
 						enable = false,
@@ -169,13 +170,13 @@ M = {
 					desc = "诊断信息",
 					cmd = "<CMD>Telescope diagnostics<CR>",
 					keys = { "n", "<leader>fd", noremap },
-				
+
 				},
 				{
 					desc = "配色主题",
 					cmd = "<CMD>Telescope colorscheme<CR>",
 					keys = { "n", "<leader>fz", noremap },
-				
+
 				},
 				{
 					desc = "命令",
@@ -231,6 +232,11 @@ M = {
 					desc = "预览Markdown",
 					cmd = "<CMD>InstantMarkdownPreview<CR>",
 					keys = { "n", "md", noremap },
+				},
+				{
+					desc = "智能替换 Tab 为空格",
+					cmd = "<CMD>lua smart_convert_tabs_to_spaces()<CR>",
+					keys = { "n", "<leader>pp", noremap },
 				},
 			})
 		end

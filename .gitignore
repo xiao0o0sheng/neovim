@@ -1,0 +1,62 @@
+# --- 操作系统生成的文件 ---
+# MacOS
+**/.DS_Store
+.AppleDouble
+Icon?
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+# Linux
+*~
+.nib/
+
+# --- 编辑器/IDE 临时文件 ---
+.idea/              # JetBrains IDE（IntelliJ/PyCharm等）
+*.iml
+.vscode/            # VS Code 配置
+*.sublime-workspace # Sublime Text
+*.sublime-project
+*.swp               # Vim/Emacs 临时文件
+*.swo
+
+# --- 开发环境文件 ---
+# 通用
+*.log
+*.tmp
+*.bak
+dist/
+build/
+.env                # 环境变量（敏感信息）
+
+# --- 语言/框架相关 ---
+# Node.js
+node_modules/
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+env/
+# Java
+*.class
+*.jar
+# C/C++
+*.o
+*.obj
+*.so
+*.dylib
+# Ruby
+*.gem/
+vendor/bundle/
+.gem/
+# .NET
+*.dll
+*.exe
+*.pdb
+# Composer (PHP)
+vendor/
+
+# --- 其他 ---
+# Obsidian/Markdown 附件
+**/attachments/

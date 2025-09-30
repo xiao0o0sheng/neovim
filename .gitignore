@@ -27,6 +27,7 @@ $RECYCLE.BIN/
 *.bak
 dist/
 build/
+**/logs/
 .env                # 环境变量（敏感信息）
 
 # --- 语言/框架相关 ---
@@ -38,6 +39,8 @@ __pycache__/
 *.pyo
 venv/
 env/
+wheels/
+*.egg-info
 # Java
 *.class
 *.jar

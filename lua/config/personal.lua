@@ -15,11 +15,10 @@
 
 
 
-vim.g.snips_author = "yourname"              -- 设置 snippets 的作者信息
-vim.g.python3_host_prog = "/usr/bin/python3" -- 设置 Vim 调用的python解释器路径
--- vim.g.mkdp_browser = "chromium"										-- 设置 mkdp 插件使用的浏览器为 Chromium
--- vim.g.mkdp_browserfunc = "open"										-- Linux: xdg-open, MacOS: open, Windows: start
-
+vim.g.snips_author = "xiao0o0sheng" -- 设置 snippets 的作者信息
+-- vim.g.python3_host_prog = "/usr/bin/python3"                         -- 设置 Vim 调用的python解释器路径, 在lspconfig.lua 里设置了自检测
+-- vim.g.mkdp_browser = "chromium"                                      -- 设置 mkdp 插件使用的浏览器为 Chromium
+-- vim.g.mkdp_browserfunc = "open"                                      -- Linux: xdg-open, MacOS: open, Windows: start
 
 -- Dracula Pro color scheme(需要dracula_pro 文件)
 -- mkdir -p ~/.local/share/nvim/site/pack/themes/start
@@ -31,7 +30,7 @@ vim.g.dracula_colorterm = 0                       -- 终端禁用 dracula_pro �
 vim.cmd("colorscheme dracula_pro_blade")          -- 默认使用 dracula_pro_blade 主题配色
 
 
--- vim.cmd("colorscheme deus")											-- 默认使用 deus 主题配色
+-- vim.cmd("colorscheme deus")                                          -- 默认使用 deus 主题配色
 
 
 
@@ -49,8 +48,8 @@ function SetFileTitle()
 		"@Created Time:    " .. os.date("%Y/%m/%d"),
 		"@File:            " .. vim.fn.expand("%"),
 		"@Software:        Neovim " .. version,
-		"@Author:          yourname",
-		"@Email:           *******@***.com",
+		"@Author:          xiao0o0sheng",
+		"@Email:           xiaosheng7@126.com",
 		"@Version:         ",
 		"@Description:     ",
 		"-----------------------------------------------------------------",
